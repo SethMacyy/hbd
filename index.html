@@ -181,6 +181,23 @@
       background-position: center;
       animation: slideUp 1.5s ease;
     }
+    @keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animated-name {
+  animation: fadeInScale 2.5s ease-out forwards, pulseName 3s infinite;
+}
+@keyframes pulseName {
+  0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px #ff90d0, 0 0 15px #ff60c0; }
+  50% { text-shadow: 0 0 15px #fff, 0 0 25px #ff90d0, 0 0 35px #ff60c0; }
+}
   </style>
 </head>
 <body>
@@ -195,8 +212,9 @@
   <div class="rain" id="rain-container"></div>
 
   <div class="page active" id="page1">
-    <div class="typing">Happy Birthday Audya Julanda Padatu</div>
-    <div class="glow-text">special day for u.</div>
+    <div class="typing">Happy Birthday to</div>
+    <div class="glow-text animated-name">Audya Julanda Padatu.</div>
+
     <button class="btn" onclick="nextPage(2)">message for u.. (click)</button>
   </div>
 
